@@ -1,0 +1,21 @@
+Asus’ ROG Flow Z13 is a Surface Pro for gamers
+
+Asus has announced its ROG Flow Z13, which it’s touting as the “world’s most powerful gaming tablet.” Yes, you read that correctly — it’s a tablet for gaming. Not mobile gaming, but PC gaming. It’s got an RTX 3050 Ti inside, and you can hook it up to Asus’ ROG XG Mobile external GPU for even more frames.
+
+I will caveat right off the bat that we don’t have a price for this thing yet, and it doesn’t seem like the type of thing we can expect to be super affordable, especially if you tack on the XG Mobile. Asus’ last crack at this sort of form factor, the ROG Mothership, started at $5,499.
+
+But even if this ends up being a luxury product, it may be a glimpse into a form factor that will eventually make its way to a more accessible tier (as we’re starting to see with, for example, dual-screen devices). We’ll find out more when the device is released in “Q1/Q2 2022.”
+
+Anyway, if you saw this device and thought, “Wow, a Surface Pro,” you’re not alone. After spending a bit of time with the ROG Flow Z13, I can confirm that it also feels like using a Surface Pro. It’s got a kickstand and a detachable keyboard, which pops on and off with little effort. It’s a generally nice-looking and well-made device.
+
+A couple things that might not be apparent from the pictures. First, it’s big. The primary benefit of these detachable devices is generally how thin and light they are. This thing is 2.43 pounds and 0.47 inches thick. It’s a chunky tablet, is what I’m saying — it’s a very different experience from using an iPad of any size, and it’s not something I’d want to necessarily carry around the house or hold while I was giving a presentation. (It’s still quite compact compared to the 10.5-pound Mothership, of course.)
+
+Second, the keyboard is quite flexible. This was a problem I had with earlier Surface Pro models, though Microsoft’s stiffened it up on the latest one. I have a light keystroke already, but each of my taps depressed this detachable deck. I’m not someone who normally notices keyboard flex at all, but even I was a little unnerved by how much this one was bouncing up and down all day. I’d probably recommend that people who really want sturdy keyboard decks wait for the next generation. With that said, I did really enjoy typing on this thing because the keys have a wild amount of travel (1.7mm).
+
+Elsewhere, I didn’t have too many complaints. The 13-inch, 3840 x 2400 touch display looked good and was responsive. There’s also a useful port selection (which you rarely see on these kinds of products) that includes a USB-C with Thunderbolt 4 and DisplayPort 1.4, a USB-A, and a microSD slot in addition to a headphone jack. Connecting the XG Mobile (which can now offer an AMD Radeon RX 6850M XT as well as a GeForce RTX 3080) will add a bunch more, including another DisplayPort 1.4, HDMI 2.1, and RJ-45 Ethernet.
+
+The factor that will make or break this device, of course, in addition to the price, is framerates. The Flow Z13 has up to a 12th Gen Intel Core i9-12900H, 16GB of RAM, and 1TB of storage in addition to the RTX 3050 Ti. The Core i9 is the biggest unknown there — last year’s ROG attempt at a gaming ultraportable, the convertible ROG Flow X13, had a monstrous AMD processor inside, and we don’t know yet how this new Core i9 will compare. The X13’s battery life also wasn’t particularly good, so that’s a question mark.
+
+The Z13 does have an advantage over traditional clamshell laptops in that its bottom half isn’t pressed against the table. In theory, this could give it more room for cooling (and the Mothership ran cooler than many of its competitors). The device was noticeably warm during much of my non-gaming use, but I didn’t hear fans running.
+
+All told, the fact that there’s a tablet you can game on, and that it actually seems to work, is cool. It was a fun device to use, and I’m all for powerful devices getting thinner and lighter without needing to compromise everything else that laptop users want. The detachable form factor, if this year’s CES is anything to go by, seems like a strategy manufacturers are seeing as a viable way to do that.
