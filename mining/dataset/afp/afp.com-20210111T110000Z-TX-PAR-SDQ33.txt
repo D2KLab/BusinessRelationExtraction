@@ -1,0 +1,54 @@
+Press Release from Business Wire: Cepton Technologies, Inc.
+
+A ground-breaking lidar-based real-time crowd analytics solution has recently helped Orlando International Airport (MCO) create one of the world's safest terminals during the COVID-19 pandemic.
+
+This press release features multimedia. View the full release here: https://www.businesswire.com/news/home/20210111005374/en/
+
+Cepton's Helius? Smart Lidar System provides real-time, anonymized, 3D tracking of people to enable intelligent crowd analytics that maximizes privacy protection. © 2021 Cepton Technologies
+
+Deployed by The Indoor Lab, the leading provider for monitoring real-time foot traffic using lidar sensors, the solution - called Safe Place? - uses Cepton's award-winning Helius? Smart Lidar System. Helius enables The Indoor Lab to provide intelligent, anonymized, 3D tracking of people, thereby dramatically improving the usability, safety and cleanliness of large spaces. Further, The Indoor Lab's ground-breaking visual analytics platform, leveraging the Helius Smart Lidar System, powers the Synect Evenflow Crowd Radar media lights in terminal 2 of the Orlando International Airport.
+
+The project at Orlando International Airport is one of several early projects initiated by The Indoor Lab and Cepton as part of a strategic partnership announced today. The Indoor Lab is Cepton's early-stage development and analytics partner shaping the future of lidar analytics. This partnership lays the foundation for long-awaited innovations that will save customers time and money, enable more efficient design of public and private commercial spaces, and add a much-needed capability to improve public safety during the COVID-19 pandemic and recovery.
+
+Patrick Blattner, co-founder and Chief Product Officer of The Indoor Lab said: "We have a 15-year history of crowd tracking across retail, events, airports, and stadiums. So, when COVID-19 started spreading exponentially and negatively affected many public and private spaces, we consulted with leaders involved in drafting proposals for the International Franchise Association, including the use of lidar technology to help put the country back on a path towards normalcy. With public concerns focused on cleanliness of public and commercial spaces, we extended our Safe Place platform beyond occupancy and social distancing, creating the first proprietary real-time sanitization detection solution in the market. A Safe Place enabled environment ensures locations have been cleaned, distancing measures are followed, and safer occupancy levels are maintained. Our partnership with Cepton helped us deliver against this promise. Our patent-pending Safe Place platform with real-time cleaning detection is the first of its kind in the world."
+
+According to The Indoor Lab, the full solution implemented in Orlando led to a drastic improvement in people's adherence to social distancing through Thanksgiving and into the busy holiday travel season. The unprecedented effectiveness of The Indoor Lab's innovative crowd analytics solution relies on the unique, high point density and detection range of Cepton's MMT®-based Vista®-series lidars and Cepton's award-winning Helius system that provides object dimensions, locations and velocities at high accuracy. The mirrorless, frictionless and rotation-free MMT architecture enables lidars that are reliable and easy to integrate for both indoor and outdoor applications. In addition, Helius allows easy aggregation of data from multiple Cepton lidar sensors to form a comprehensive and extendable network for seamless tracking. For instance, this allows the anonymized tracking of the same person across large overlapping areas, which, according to The Indoor Lab, is another game-changing factor that differentiates Helius from other lidar solutions.
+
+In the Orlando International Airport deployment, the Indoor Lab used seven Vista lidar sensors from Cepton to seamlessly cover nearly 100% of the terminal area of roughly 50,000 square feet, something that would otherwise have required significantly more video cameras, each consuming far more data and storage bandwidth compared to the lidars. Unlike video cameras, lidars also perform accurately 24/7 regardless of lighting conditions.
+
+Another key advantage of lidar, compared to cameras, is that it does not capture biometric data. While lidar sensors provide information to help detect, track and classify objects accurately, they do not show facial features and skin/hair color, maximizing protection of people's privacy and reducing analytical bias. "The great thing about lidar-based crowd analytics is that it is compliant with privacy laws. At the same time, the system can also integrate with point, tilt, zoom (PTZ) cameras to detect potential public safety risks, such as a bag left behind in a public space or people unexpectedly moving at high rates of speed," explained Blattner.
+
+The partnership between Cepton and The Indoor Lab extends beyond projects in airports. Using Cepton's technology, The Indoor Lab is successfully monitoring real-time traffic globally across hotels, stadiums, large commercial venues and retail spaces, such as malls and stores. The Indoor Lab's software provides state-of-the-art, real-time information on crowd density, as well as dwell times, motion tracking and speed of individuals. Using all of that data, enterprises can optimize their customers' experience in their spaces - to manage queues, reduce crowding, optimize layout of aisles, walkways and shops, as well as address safety and security risks.
+
+"After evaluating most of the lidar hardware and 3D perception software offerings on the market, The Indoor Lab has identified Cepton to be the leader with a combined solution that provides the point-cloud density, accuracy, reliability, and ease and cost of integration required to properly enable crowd analytics. Together with the Cepton team, we have successfully monitored and analyzed dense crowds in some of the most challenging environments," said Patrick Mooney, co-founder and CTO at The Indoor Lab.
+
+Dr. Jun Pei, Cepton's co-founder and CEO, said: "We are grateful for the partnership with The Indoor Lab and for their adoption of Cepton's cutting-edge technology to deploy their pathbreaking innovations into a range of diverse applications. The power of this partnership is already evident in the remarkable results recently showcased by The Indoor Lab with their other partners."
+
+"We worked closely with The Indoor Lab to ensure we were able to deliver the capabilities and accuracy needed for their smart space applications at an affordable price. Our Helius team built a ground-breaking solution that combines intelligent, powerful lidar perception with ease of integration and data efficiency. In a future where smart spaces are pivotal to positively transforming people's experience in travel, retail, hospitality, entertainment and beyond, I'm confident that Helius will continue to set the benchmark for world-class anonymized perception needed by world-leading partners such as The Indoor Lab."
+
+Cepton will be showcasing its state-of-the-art lidar solutions at CES 2021 from January 11 to January 14, 2021. Please visit Cepton's virtual booth (requires CES registration) for more information about Helius and Cepton's full suite of lidar offerings for various markets. During CES, Cepton's CMO Dr. T. R. Ramachandran will present at an online webinar "Lidar, What's the Future" on Tuesday Jan 12 at 2 p.m. (PST), hosted by North American Lighting (NAL). Additionally, Dr. Ramachandran will discuss how lidar is transforming smart cities in a virtual panel discussion "Smart City Roundtable: What is a Smart City?" on Jan 13 at 2 p.m. (PST), also hosted by NAL. Join the sessions online to learn more about the transformational nature of lidar technology and how Cepton's smart lidar solutions are uniquely suited for large scale deployments in smart city and smart spaces applications.
+
+About Cepton Technologies, Inc.
+
+Cepton provides state-of-the-art, intelligent, lidar-based solutions for a range of markets such as automotive (ADAS/AV), smartcities, smart spaces and smart industrial applications. Cepton's patented MMT®-based lidar technology enables reliable, scalable and cost-effective solutions that deliver long range, high resolution 3D perception for smart applications.
+
+Founded in 2016 and led by industry veterans with over two decades of collective experience across a wide range of advanced lidar and imaging technologies, Cepton is focused on the mass market commercialization of high performance, high quality lidar solutions. Cepton is headquartered in San Jose, California, USA, with a presence in Germany, Canada, Japan and India, to serve a fast-growing global customer base. For more information, visit www.cepton.com and follow us on Twitter and LinkedIn.
+
+About The Indoor Lab
+
+The Indoor Lab, is the leading provider for monitoring real-time foot traffic using lidar sensors. The Safe PlaceTM platform is the newest product within their portfolio of foot traffic analytic solutions and is shaping the safe return and re-opening for all businesses in the future. Beyond COVID-19, The Indoor Lab offers the most extensive combined experience in designing, developing, and deploying real-time location services for some of the most heavily trafficked retailers, monuments, airports, and stadiums worldwide. The founders were the first to introduce 3D lidar for public space tracking and have since become the market leaders delivering the most accurate privacy compliant tracking solutions in the world. For more information, visit www.theindoorlab.com and follow us on LinkedIn.
+
+
+
+View source version on businesswire.com: https://www.businesswire.com/news/home/20210111005374/en/
+
+
+
+Contact
+
+Faithy Li, Cepton Technologies: media@cepton.com
+
+© 2021 Business Wire, Inc.
+
+Disclaimer:
+This material is not an AFP editorial material, and AFP shall not bear responsibility for the accuracy of its content. In case you have any questions about the content, kindly refer to the contact person/entity mentioned in the text of the release.

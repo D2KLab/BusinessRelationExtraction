@@ -1,0 +1,45 @@
+What is SWIFT and why it might be the weapon Russia fears most
+
+London (CNN Business) Some are calling it the "nuclear option."
+
+As Western governments threaten Russia with a package of unprecedented sanctions aimed at deterring President Vladimir Putin from ordering an invasion of Ukraine, there's one measure in particular that appears to strike fear at the heart of the Kremlin: cutting the country off from the global banking system.
+
+US lawmakers have suggested in recent weeks that Russia could be removed from SWIFT, a high security network that connect thousands of financial institutions around the world.
+
+Senior Russian lawmakers have responded by saying that shipments of oil, gas and metals to Europe would stop if that happened.
+
+"If Russia is disconnected from SWIFT, then we will not receive [foreign] currency, but buyers, European countries in the first place, will not receive our goods — oil, gas, metals and other important components," Nikolai Zhuravlev, vice speaker of Russia's upper house of parliament, said Tuesday, according to state media outlet TASS.
+
+The Society for Worldwide Interbank Financial Telecommunication was founded in 1973 to replace the telex and is now used by over 11,000 financial institutions to send secure messages and payment orders. With no globally accepted alternative, it is essential plumbing for global finance.
+
+Removing Russia from SWIFT would make it nearly impossible for financial institutions to send money in or out of the country, delivering a sudden shock to Russian companies and their foreign customers — especially buyers of oil and gas exports denominated in US dollars.
+
+SWIFT is based in Belgium and governed by a board consisting of 25 people, including Eddie Astanin, chairman of the management board at Russia's Central Counterparty Clearing Centre. SWIFT, which describes itself as a "neutral utility," is incorporated under Belgian law and must comply with EU regulations.
+
+What happens if Russia is removed?
+
+There is precedent for removing a country from SWIFT.
+
+SWIFT unplugged Iranian banks in 2012 after they were sanctioned by the European Union over the country's nuclear program. Iran lost almost half of its oil export revenue and 30% of foreign trade following the disconnection, according to Shagina.
+
+"SWIFT is a neutral global cooperative set up and operated for the collective benefit of its community," the organization said in a statement Wednesday. "Any decision to impose sanctions on countries or individual entities rests solely with the competent government bodies and applicable legislators," it added.
+
+It's not clear how much support there is among US allies for taking similar action against Russia. The United States and Germany have the most to lose if Russia is disconnected, because their banks are the most frequent SWIFT users to communicate with Russian banks, according to Shagina.
+
+The European Union is ready to respond to a Russian invasion of Ukraine with "comprehensive sanctions never seen before," Danish foreign minister Jeppe Kofod said on Monday. EU chief diplomat Josep Borrell said Tuesday that sanctions would be "the most consequential leverage that the West, or at least the European Union, has."
+
+British Prime Minister Boris Johnson told lawmakers on Tuesday that his government was discussing the possibility of banning Russia from SWIFT with the United States.
+
+"There is no doubt that that would be a very potent weapon [against Russia]. I'm afraid it can only really be deployed with the assistance of the United States though. We are in discussions about that," Johnson said.
+
+Russia has taken steps in recent years to blunt the trauma should it be removed from SWIFT.
+
+Moscow established its own payment system, SPFS, after it was hit by Western sanctions in 2014 following its annexation of Crimea early that year. SPFS now has around 400 users, according to Russia's central bank. Twenty percent of domestic transfers are currently done through SPFS, according to Shagina, but the size of messages are limited and operations are limited to weekday hours.
+
+China's fledgling Cross-Border Interbank Payment System, or CIPS, may provide another alternative to SWIFT. Moscow could also be forced to resort to using cryptocurrencies.
+
+But these are not appealing alternatives.
+
+"SWIFT is an European company, an association of many participating countries. To make a decision on disconnection, a united decision of all participating countries is needed. The decisions of the United States and Great Britain are definitely not enough," Zhuravlev said, according to TASS.
+
+"I'm not sure that other countries, especially those whose share of trade with Russia is large in balance, will support the shutdown," he added.
