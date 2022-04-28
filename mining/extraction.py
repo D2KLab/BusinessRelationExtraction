@@ -5,51 +5,7 @@ import numpy as np
 import pandas as pd
 import spacy
 
-class save_datas(object):
-    def __init__(self, subdirectories, datadir, corefdirectory, model):
-        self.datadir=datadir
-        self.dir=corefdirectory
-        self.model=model
-        if subdirectories==True:
-            self.sub=True
-        else:
-            self.sub=False
-
-    def compute_token(self):
-        if self.sub==True:
-            directories=[]
-            for file in os.listdir(self.datadir):
-                d = os.path.join(self.datadir, file)
-                if os.path.isdir(d):
-                    directories.append(d)
-            datas={}
-            #spacy.require_cpu()
-            nlp = spacy.load(self.model)
-            for i in directories:
-                pref=str(i.split('/')[-1])
-                files = [f for f in listdir(i) if isfile(join(i, f))]
-                for f in files:
-                    if f[-4:]=='.txt':
-                        #suf=f[:-4]
-                        #name=pref+suf
-                        with open(i+'/'+f, "r") as file:
-                            data = file.read().replace("\n", "")
-                        article = data.replace(u"\xa0", u" ")
-                        datas[f]=nlp(article)
-            return datas
-
-        else:
-            datas={}
-            #spacy.require_cpu()
-            nlp = spacy.load(self.model)
-            files = [f for f in listdir(self.datadir) if isfile(join(self.datadir, f))]
-            for f in files:
-                #ff=f[:-4]
-                with open(self.datadir+f, "r") as file:
-                    data = file.read().replace("\n", "")
-                article = data.replace(u"\xa0", u" ")
-                datas[f]=nlp(article)
-            return datas
+# note: relations are extracted for data with both coreference resolution and not, they are appended so you can expect duplicates
 
 class extraction(object):
     def __init__(self, token_data, coref_data):
@@ -57,7 +13,7 @@ class extraction(object):
         self.corefs=coref_data
         self.tokenKeys=[f for f in self.tokens.keys()]
 
-    def list_entities(self, text, *args):  # store all entities. NOTE: Sometimes entities' names match closely -> use levenstein measure ???
+    def list_entities(self, text, *args):  # store all entities. NOTE: Sometimes entities' names match closely -> use levenstein measure ???  too complex 
         ents_=text.ents
         ents=[]
         for x in ents_:
@@ -165,39 +121,34 @@ class extraction(object):
         for i in self.tokenKeys:
             text=self.tokens[i]
             ents=self.list_entities(text,*orgs_token)
-            coref_text=self.coref[i]
-            for s in range(len(text.sents)):
+            for t in text.sents:
                 dict_={}
-                org=self.find_org(text.sents[s],ents)
+                org=self.find_org(t,ents)
                 if len(org)>=2:
-                    SVO=self.check_synonym_SVO(text.sents[s],*verbs_selec)
+                    SVO=self.check_synonym_SVO(t,*verbs_selec)
                     if SVO==True:
-                        sbj=self.find_sbj(text.sents[s],org)
+                        sbj=self.find_sbj(t,org)
                         if len(sbj)>0:
-                            obj=self.find_obj(text.sents[s],org)
+                            obj=self.find_obj(t,org)
                             if len(obj)>0:
                                 dict_["id"]=i
-                                dict_["relation"]=relation
-                                dict_["sentence"]=text.sents[s]
-                                dict_["sentence_context"]=text.sents[s-3]+text.sents[s-2]+text.sents[s-1]+text.sents[s]+text.sents[s+1]
+                                dict_["relation"]=relation   # context don't work: not iterable 
+                                dict_["sentence"]=t
                                 dict_["entityA"]=sbj
                                 dict_["entityB"]=obj
-                                dict_["other_type_context"]=coref_text.sents[s-3]+coref_text.sents[s-2]+coref_text.sents[s-1]+coref_text.sents[s]+coref_text.sents[s+1]
                                 tuples_token.append(dict_)
                             else:
                                 continue
                         else:
-                            nsubjpass=self.find_nsubjpass(text.sents[s],org)
+                            nsubjpass=self.find_nsubjpass(t,org)
                             if len(nsubjpass)>0:
-                                obj=self.find_obj(text.sents[s],org)
+                                obj=self.find_obj(t,org)
                                 if len(obj)>0:
                                     dict_["id"]=i
                                     dict_["relation"]=relation
-                                    dict_["sentence"]=text.sents[s]
-                                    dict_["sentence_context"]=text.sents[s-3]+text.sents[s-2]+text.sents[s-1]+text.sents[s]+text.sents[s+1]
+                                    dict_["sentence"]=t
                                     dict_["entityA"]=obj
                                     dict_["entityB"]=sbj
-                                    dict_["other_type_context"]=coref_text.sents[s-3]+coref_text.sents[s-2]+coref_text.sents[s-1]+coref_text.sents[s]+coref_text.sents[s+1]
                                     tuples_token.append(dict_)
                                 else:
                                     continue
@@ -209,40 +160,36 @@ class extraction(object):
                     continue
         for i in self.tokenKeys:
             token_text=self.tokens[i]
-            text=self.coref[i]
+            text=self.corefs[i]
             ents=self.list_entities(text,*orgs_coref_tokens)
-            for s in range(len(text.sents)):
+            for t in text.sents:
                 dict_={}
-                org=self.find_org(text.sents[s],ents)
+                org=self.find_org(t,ents)
                 if len(org)>=2:
-                    self.check_synonym_SVO(text.sents[s],*verbs_selec)
+                    self.check_synonym_SVO(t,*verbs_selec)
                     if SVO==True:
-                        sbj=self.find_sbj(text.sents[s],org)
+                        sbj=self.find_sbj(t,org)
                         if len(sbj)>0:
-                            obj=self.find_obj(text.sents[s],org)
+                            obj=self.find_obj(t,org)
                             if len(obj)>0:
                                 dict_["id"]=i
                                 dict_["relation"]=relation
-                                dict_["sentence"]=text.sents[s]
-                                dict_["sentence_context"]=text.sents[s-3]+text.sents[s-2]+text.sents[s-1]+text.sents[s]+text.sents[s+1]
+                                dict_["sentence"]=t
                                 dict_["entityA"]=sbj
                                 dict_["entityB"]=obj
-                                dict_["other_type_context"]=token_text.sents[s-3]+token_text.sents[s-2]+token_text.sents[s-1]+token_text.sents[s]+token_text.sents[s+1]
                                 tuples_coref.append(dict_)
                             else:
                                 continue
                         else:
-                            nsubjpass=self.find_nsubjpass(text.sents[s],org)
+                            nsubjpass=self.find_nsubjpass(t,org)
                             if len(nsubjpass)>0:
-                                obj=self.find_obj(text.sents[s],org)
+                                obj=self.find_obj(t,org)
                                 if len(obj)>0:
                                     dict_["id"]=i
                                     dict_["relation"]=relation
-                                    dict_["sentence"]=text.sents[s]
-                                    dict_["sentence_context"]=text.sents[s-3]+text.sents[s-2]+text.sents[s-1]+text.sents[s]+text.sents[s+1]
+                                    dict_["sentence"]=t
                                     dict_["entityA"]=obj
                                     dict_["entityB"]=sbj
-                                    dict_["other_type_context"]=token_text.sents[s-3]+token_text.sents[s-2]+token_text.sents[s-1]+token_text.sents[s]+token_text.sents[s+1]
                                     tuples_coref.append(dict_)
                                 else:
                                     continue
@@ -254,53 +201,48 @@ class extraction(object):
                     continue
         return tuples_token, tuples_coref
 
-    def attribute_patern(self, relation, verbs_selec, orgs_token, orgs_coref_tokens):
+    def attribute_pattern(self, relation, verbs_selec, orgs_token, orgs_coref_tokens):
         tuples_token=[]
         tuples_coref=[]
         for i in self.tokenKeys:
             text=self.tokens[i]
             ents=self.list_entities(text,*orgs_token)
-            coref_text=self.coref[i]
-            for s in range(len(text.sents)):
+            for t in text.sents:
                 dict_={}
-                org=self.find_org(text.sents[s],ents)
+                org=self.find_org(t,ents)
                 if len(org)>=2:
-                    self.check_synonym_attr(text.sents[s],*verbs_selec)
+                    attr=self.check_synonym_attr(t,*verbs_selec)
                     if attr==True:
-                        sbj=self.find_sbj(text.sents[s],org)
+                        sbj=self.find_sbj(t,org)
                         if len(sbj)>0:
-                            obj=self.find_obj_attr(text.sents[s],org)
+                            obj=self.find_obj_attr(t,org)
                             if len(obj)>0:
                                 dict_["id"]=i
                                 dict_["relation"]=relation
-                                dict_["sentence"]=text.sents[s]
-                                dict_["sentence_context"]=text.sents[s-3]+text.sents[s-2]+text.sents[s-1]+text.sents[s]+text.sents[s+1]
+                                dict_["sentence"]=t
                                 dict_["entityA"]=sbj
                                 dict_["entityB"]=obj
-                                dict_["other_type_context"]=token_text.sents[s-3]+token_text.sents[s-2]+token_text.sents[s-1]+token_text.sents[s]+token_text.sents[s+1]
                                 tuples_coref.append(dict_)
 
         for i in self.tokenKeys:
             token_text=self.tokens[i]
-            text=self.coref[i]
+            text=self.corefs[i]
             ents=self.list_entities(text,*orgs_coref_tokens)
-            for s in range(len(text.sents)):
+            for t in text.sents:
                 dict_={}
-                org=self.find_org(text.sents[s],ents)
+                org=self.find_org(t,ents)
                 if len(org)>=2:
-                    self.check_synonym_attr(text.sents[s],*verbs_selec)
+                    attr=self.check_synonym_attr(t,*verbs_selec)
                     if attr==True:
-                        sbj=self.find_sbj(text.sents[s],org)
+                        sbj=self.find_sbj(t,org)
                         if len(sbj)>0:
-                            obj=self.find_obj_attr(text.sents[s],org)
+                            obj=self.find_obj_attr(t,org)
                             if len(obj)>0:
                                 dict_["id"]=i
                                 dict_["relation"]=relation
-                                dict_["sentence"]=text.sents[s]
-                                dict_["sentence_context"]=text.sents[s-3]+text.sents[s-2]+text.sents[s-1]+text.sents[s]+text.sents[s+1]
+                                dict_["sentence"]=t
                                 dict_["entityA"]=sbj
                                 dict_["entityB"]=obj
-                                dict_["other_type_context"]=token_text.sents[s-3]+token_text.sents[s-2]+token_text.sents[s-1]+token_text.sents[s]+token_text.sents[s+1]
                                 tuples_coref.append(dict_)
 
         return tuples_token, tuples_coref
@@ -313,47 +255,61 @@ class extraction(object):
         for i in self.tokenKeys:
             text=self.tokens[i]
             ents=self.list_entities(text,*orgs_token)
-            coref_text=self.coref[i]
-            for s in range(len(text.sents)):
+            for t in text.sents:
                 dict_={}
-                org=self.find_org(text.sents[s],ents)
+                org=self.find_org(t,ents)
                 if len(org)>=2:
-                    self.check_synonym_acl(text.sents[s],*verbs_selec)
+                    acl=self.check_synonym_acl(t,*verbs_selec)
                     if acl==True:
-                        sbj=self.find_sbj(text.sents[s],org)
+                        sbj=self.find_sbj(t,org)
                         if len(sbj)>0:
-                            obj=self.find_obj_acl(text.sents[s],org)
+                            obj=self.find_obj_acl(t,org)
                             if len(obj)>0:
                                 dict_["id"]=i
                                 dict_["relation"]=relation
-                                dict_["sentence"]=text.sents[s]
-                                dict_["sentence_context"]=text.sents[s-3]+text.sents[s-2]+text.sents[s-1]+text.sents[s]+text.sents[s+1]
+                                dict_["sentence"]=t
                                 dict_["entityA"]=sbj
                                 dict_["entityB"]=obj
-                                dict_["other_type_context"]=token_text.sents[s-3]+token_text.sents[s-2]+token_text.sents[s-1]+token_text.sents[s]+token_text.sents[s+1]
                                 tuples_coref.append(dict_)
 
         for i in self.tokenKeys:
             token_text=self.tokens[i]
-            text=self.coref[i]
+            text=self.corefs[i]
             ents=self.list_entities(text,*orgs_coref_tokens)
-            for s in range(len(text.sents)):
+            for t in text.sents:
                 dict_={}
-                org=self.find_org(text.sents[s],ents)
+                org=self.find_org(t,ents)
                 if len(org)>=2:
-                    self.check_synonym_acl(text.sents[s],*verbs_selec)
+                    acl=self.check_synonym_acl(t,*verbs_selec)
                     if acl==True:
-                        sbj=self.find_sbj(text.sents[s],org)
+                        sbj=self.find_sbj(t,org)
                         if len(sbj)>0:
-                            obj=self.find_obj_acl(text.sents[s],org)
+                            obj=self.find_obj_acl(t,org)
                             if len(obj)>0:
                                 dict_["id"]=i
                                 dict_["relation"]=relation
-                                dict_["sentence"]=text.sents[s]
-                                dict_["sentence_context"]=text.sents[s-3]+text.sents[s-2]+text.sents[s-1]+text.sents[s]+text.sents[s+1]
+                                dict_["sentence"]=t
                                 dict_["entityA"]=sbj
                                 dict_["entityB"]=obj
-                                dict_["other_type_context"]=token_text.sents[s-3]+token_text.sents[s-2]+token_text.sents[s-1]+token_text.sents[s]+token_text.sents[s+1]
                                 tuples_coref.append(dict_)
 
         return tuples_token, tuples_coref
+    
+    def sentences_entities(self, coref, orgs):
+        tuples_token=[]
+        for i in self.tokenKeys:
+            if coref==True:
+                text=self.corefs[i]
+            else:
+                text=self.tokens[i]
+            ents=self.list_entities(text,*orgs)    
+            for t in text.sents:
+                dict_={}
+                org=self.find_org(t,ents)
+                if len(org)>=2:
+                    dict_["id"]=i
+                    dict_["relation"]="entities_present"
+                    dict_["sentence"]=t
+                    dict_["entities"]=org
+                    tuples_token.append(dict_)
+        return tuples_token
