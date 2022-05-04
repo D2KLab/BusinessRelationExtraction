@@ -7,7 +7,7 @@ pip install -r requirements.txt
 pip install -e .
 
 
-python -m spacy download en_core_web_sm #trf incompatible with space version\
+python -m spacy download en_core_web_sm #trf incompatible with spacy version\
 pip install jupyter
 pip install ipykernel
 python -m ipykernel install --user --name=coref

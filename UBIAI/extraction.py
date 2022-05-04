@@ -312,3 +312,26 @@ class extraction(object):
                     dict_["sentence"]=t
                     tuples_token.append(dict_)
         return tuples_token
+    
+    def sentences_entity_products(self, coref):   # org + products
+        tuples_token=[]
+        for i in self.tokenKeys:
+            if coref==True:
+                text=self.corefs[i]
+            else:
+                text=self.tokens[i]
+            org=self.list_entities(text,"ORG")
+            prod=self.list_entities(text,"PRODUCT")
+            for t in text.sents:
+                dict_={}   
+                org_=self.find_org(t,org)
+                prod_=self.find_org(t,prod)
+                if len(org_)>=1 & len(prod_)>=1:
+                    dict_["id"]=i
+                    dict_["relation"]="entities-products_present"
+                    dict_["sentence"]=t
+                    tuples_token.append(dict_)                    
+        return tuples_token
+        
+        
+        
